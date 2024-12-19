@@ -11,7 +11,7 @@ import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
-@RequestMapping("/products") // Establecemos una ruta base para nuestro controller
+@RequestMapping("/rest/products") // Establecemos una ruta base para nuestro controller
 public class ProductRestContoller {
 
     // Creamos una propiedad de product service
