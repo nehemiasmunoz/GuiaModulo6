@@ -1,11 +1,10 @@
 package com.marvic.guia_modulo_6.controller;
 
+import com.marvic.guia_modulo_6.services.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import com.marvic.guia_modulo_6.services.ProductService;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/products")
@@ -19,8 +18,8 @@ public class ProductController {
 
     @GetMapping()
     public String getAllProduct(Model model) {
-        // model.addAtribute(
-        return "product_list" ;
+        model.addAttribute("products", service.getAllProducts());
+        return "product_list";
     }
 
 }
