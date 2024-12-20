@@ -3,6 +3,7 @@ package com.marvic.guia_modulo_6.services;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.marvic.guia_modulo_6.dtos.ProductDTO;
 import org.springframework.stereotype.Service;
 
 import com.marvic.guia_modulo_6.models.Product;
@@ -20,8 +21,8 @@ public class ProductService {
         products.add(new Product(3L, "Cartera", "Cartera de cuero color negro", 20.000, 20L));
     }
 
-    public List<Product> getAllProducts() {
-        return products;
+    public List<ProductDTO> getAllProducts() {
+        return products.stream().map(p -> p.toDTO()).toList();
     }
 
 }
