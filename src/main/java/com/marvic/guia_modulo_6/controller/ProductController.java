@@ -19,7 +19,7 @@ public class ProductController {
 
     @GetMapping()
     public String getAllProduct(Model model) {
-        // model.addAtribute(
+        model.addAttribute("productList", service.getAllProducts());
         return "product_list" ;
     }
 
