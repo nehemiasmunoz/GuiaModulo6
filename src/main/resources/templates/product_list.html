@@ -24,6 +24,13 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr th:each="product : ${productList}">
+                        <td th:text="${product.id}"></td>
+                        <td th:text="${product.name}"></td>
+                        <td th:text="${product.description}"></td>
+                        <td th:text="${product.price}"></td>
+                        <td th:text="${product.stock}"></td>
+                    </tr>
                 </tbody>
             </table>
         </section>
