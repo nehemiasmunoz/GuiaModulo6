@@ -4,7 +4,6 @@ import com.marvic.guia_modulo_6.dtos.ProductDTO;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.marvic.guia_modulo_6.models.Product;
 import com.marvic.guia_modulo_6.services.ProductService;
 
 import java.util.List;
