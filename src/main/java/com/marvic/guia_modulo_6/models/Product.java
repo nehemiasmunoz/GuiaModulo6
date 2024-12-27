@@ -1,5 +1,7 @@
 package com.marvic.guia_modulo_6.models;
 
+import com.marvic.guia_modulo_6.dtos.ProductDTO;
+
 public class Product {
     private Long id;
     private String name;
@@ -58,4 +60,7 @@ public class Product {
         this.stock = stock;
     }
 
+    public ProductDTO toDTO(){
+        return new ProductDTO(this.id, this.name, this.description, this.price, this.stock);
+    }
 }
