@@ -2,6 +2,7 @@ package com.marvic.guia_modulo_6.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import com.marvic.guia_modulo_6.dtos.ProductDTO;
@@ -26,6 +27,17 @@ public class ProductService {
         return products.stream()
                 .map(ProductDTO::new)
                 .collect(Collectors.toList());
+    }
+
+    public Optional<ProductDTO> getProductById(Long id) {
+        Optional<Product> productdb = products.stream()
+                .filter(product -> product.getId().equals(id))
+                .findFirst();
+        if (productdb.isPresent()) {
+            return Optional.of(new ProductDTO(productdb.get()));
+        }else{
+            return Optional.empty();
+        }
     }
 
 }
