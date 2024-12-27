@@ -1,5 +1,6 @@
 package com.marvic.guia_modulo_6.restControllers;
 
+import com.marvic.guia_modulo_6.dtos.ProductDTO;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,7 +24,7 @@ public class ProductRestContoller {
     }
 
     @GetMapping("/list")
-    public List<Product> getMethodName() {
+    public List<ProductDTO> getAllProducts() {
         return productService.getAllProducts();
     }
 
