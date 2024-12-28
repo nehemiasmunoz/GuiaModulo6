@@ -1,19 +1,19 @@
 package com.marvic.guia_modulo_6.services;
 
+import com.marvic.guia_modulo_6.dtos.ProductDTO;
+import com.marvic.guia_modulo_6.models.Product;
+import com.marvic.guia_modulo_6.services.interfaces.IProductService;
+import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import com.marvic.guia_modulo_6.dtos.ProductDTO;
-import org.springframework.stereotype.Service;
-
-import com.marvic.guia_modulo_6.models.Product;
-
 // Anotacion que indica a springboot que esta clase sera un servicio y puede ser
 // administrada por el
 @Service
-public class ProductService {
+public class ProductService implements IProductService {
     ArrayList<Product> products = new ArrayList<>();
 
     ProductService() {
@@ -35,7 +35,7 @@ public class ProductService {
                 .findFirst();
         if (productdb.isPresent()) {
             return Optional.of(new ProductDTO(productdb.get()));
-        }else{
+        } else {
             return Optional.empty();
         }
     }
