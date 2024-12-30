@@ -38,12 +38,12 @@ public class ProductService implements IProductService {
 
     @Override
     public void saveProduct(NewProductDTO product) {
-        productRepository.save(product);
+        productRepository.save(new Product(product));
     }
 
     @Override
     public void deleteProduct(long id) {
-        productRepository.delete(id);
+        productRepository.deleteById(id);
     }
 
 }
