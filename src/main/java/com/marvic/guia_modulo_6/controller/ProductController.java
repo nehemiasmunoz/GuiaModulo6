@@ -1,11 +1,13 @@
 package com.marvic.guia_modulo_6.controller;
 
 import com.marvic.guia_modulo_6.dtos.ProductDTO;
+import com.marvic.guia_modulo_6.dtos.product.NewProductDTO;
 import com.marvic.guia_modulo_6.services.interfaces.IProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -39,4 +41,14 @@ public class ProductController {
         return "product_list";
     }
 
+    @GetMapping("/save")
+    public String getProductForm() {
+        return "product_form";
+    }
+
+    @PostMapping(value = "/save")
+    public String saveProduct(NewProductDTO product) {
+        service.saveProduct(product);
+        return "redirect:/products";
+    }
 }
