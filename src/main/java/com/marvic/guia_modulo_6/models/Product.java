@@ -1,7 +1,7 @@
 package com.marvic.guia_modulo_6.models;
 
-import com.marvic.guia_modulo_6.dtos.ProductDTO;
 import com.marvic.guia_modulo_6.dtos.product.NewProductDTO;
+import com.marvic.guia_modulo_6.dtos.product.ProductDTO;
 import jakarta.persistence.*;
 
 @Entity

@@ -1,7 +1,7 @@
 package com.marvic.guia_modulo_6.restControllers;
 
-import com.marvic.guia_modulo_6.dtos.ProductDTO;
 import com.marvic.guia_modulo_6.dtos.product.NewProductDTO;
+import com.marvic.guia_modulo_6.dtos.product.ProductDTO;
 import com.marvic.guia_modulo_6.services.ProductService;
 import org.springframework.web.bind.annotation.*;
 

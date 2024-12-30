@@ -1,7 +1,7 @@
 package com.marvic.guia_modulo_6.controller;
 
-import com.marvic.guia_modulo_6.dtos.ProductDTO;
 import com.marvic.guia_modulo_6.dtos.product.NewProductDTO;
+import com.marvic.guia_modulo_6.dtos.product.ProductDTO;
 import com.marvic.guia_modulo_6.services.interfaces.IProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

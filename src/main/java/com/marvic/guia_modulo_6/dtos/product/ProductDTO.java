@@ -1,4 +1,4 @@
-package com.marvic.guia_modulo_6.dtos;
+package com.marvic.guia_modulo_6.dtos.product;
 
 import com.marvic.guia_modulo_6.models.Product;
 
@@ -9,7 +9,7 @@ public record ProductDTO(
         Double price,
         Long stock) {
 
-    public ProductDTO (Product product){
+    public ProductDTO(Product product) {
         this(product.getId(), product.getName(), product.getDescription(), product.getPrice(), product.getStock());
     }
 }
