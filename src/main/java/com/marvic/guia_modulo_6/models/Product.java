@@ -1,8 +1,14 @@
 package com.marvic.guia_modulo_6.models;
 
 import com.marvic.guia_modulo_6.dtos.ProductDTO;
+import com.marvic.guia_modulo_6.dtos.product.NewProductDTO;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "products")
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private String description;
@@ -18,6 +24,13 @@ public class Product {
         this.description = description;
         this.price = price;
         this.stock = stock;
+    }
+
+    public Product(NewProductDTO newProductDTO) {
+        this.name = newProductDTO.name();
+        this.description = newProductDTO.description();
+        this.price = newProductDTO.price();
+        this.stock = newProductDTO.stock();
     }
 
     public Long getId() {
@@ -60,7 +73,7 @@ public class Product {
         this.stock = stock;
     }
 
-    public ProductDTO toDTO(){
+    public ProductDTO toDTO() {
         return new ProductDTO(this.id, this.name, this.description, this.price, this.stock);
     }
 }
