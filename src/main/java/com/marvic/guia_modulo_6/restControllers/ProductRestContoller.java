@@ -3,6 +3,7 @@ package com.marvic.guia_modulo_6.restControllers;
 import com.marvic.guia_modulo_6.dtos.product.NewProductDTO;
 import com.marvic.guia_modulo_6.dtos.product.ProductDTO;
 import com.marvic.guia_modulo_6.services.ProductService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,7 +37,8 @@ public class ProductRestContoller {
     }
 
     @PostMapping("/save")
-    public void saveProduct(@RequestBody NewProductDTO newProductDTO) {
+    //@Valid para validacion a nivel de metodo
+    public void saveProduct(@RequestBody @Valid NewProductDTO newProductDTO) {
         productService.saveProduct(newProductDTO);
     }
 
